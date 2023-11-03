@@ -7,16 +7,35 @@ const initialState = {
   value: 0,
 };
 
+//action identifiers
+const INCREMENT = "increment";
+const DECREMENT = "decrement";
+
+//action creators
+const increment = (value) => {
+  return {
+    type: INCREMENT,
+    payload: value,
+  };
+};
+
+const decrement = (value) => {
+  return {
+    type: DECREMENT,
+    payload: value,
+  };
+};
+
 function counterReducer(state = initialState, action) {
   if (action.type === "increment") {
     return {
       ...state,
-      value: state.value + 1,
+      value: state.value + action.payload,
     };
   } else if (action.type === "decrement") {
     return {
       ...state,
-      value: state.value - 1,
+      value: state.value - action.payload,
     };
   } else {
     return state;
@@ -35,13 +54,9 @@ render();
 store.subscribe(render);
 
 incrementEl.addEventListener("click", () => {
-  store.dispatch({
-    type: "increment",
-  });
+  store.dispatch(increment(5));
 });
 
 decrementEl.addEventListener("click", () => {
-  store.dispatch({
-    type: "decrement",
-  });
+  store.dispatch(decrement(2));
 });
