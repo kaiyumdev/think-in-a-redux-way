@@ -5,6 +5,10 @@ const decrementEl = document.getElementById("decrement");
 
 const initialState = {
   value: 0,
+  properties: {
+    a: 5,
+    b: 6,
+  },
 };
 
 //action identifiers
@@ -27,15 +31,23 @@ const decrement = (value) => {
 };
 
 function counterReducer(state = initialState, action) {
-  if (action.type === "increment") {
+  if (action.type === INCREMENT) {
     return {
       ...state,
       value: state.value + action.payload,
     };
-  } else if (action.type === "decrement") {
+  } else if (action.type === DECREMENT) {
     return {
       ...state,
       value: state.value - action.payload,
+    };
+  } else if (action.type === ITEST) {
+    return {
+      ...state,
+      properties: {
+        ...state.properties,
+        b: state.properties + 1,
+      },
     };
   } else {
     return state;
