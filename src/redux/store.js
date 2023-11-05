@@ -1,6 +1,20 @@
-import { createStore } from "redux";
+/* eslint-disable no-unused-vars */
+import { applyMiddleware, createStore } from "redux";
 import rootReducer from "./rootReducer";
 
-const store = createStore(rootReducer);
+// create our first middleware
+const myLogger = (store) => (next) => (action) => {
+  console.log(`Action: ${JSON.stringify(action)}`);
+  console.log(`Before: ${JSON.stringify(store.getState())}`);
+
+  const upcomingState = [action].reduce(rootReducer, store.getState());
+
+  console.log(`Upcoming State: ${JSON.stringify(upcomingState)}`);
+
+  // pass action
+  return next(action);
+};
+
+const store = createStore(rootReducer, applyMiddleware(myLogger));
 
 export default store;
