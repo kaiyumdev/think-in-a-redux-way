@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { createSlice } from "@reduxjs/toolkit";
+const createSlice = require("@reduxjs/toolkit").createSlice;
 
 //initialState
 const initialState = {
@@ -20,5 +20,5 @@ const counterSlice = createSlice({
   },
 });
 
-modules.exports = counterSlice.reducer;
-modules.exports.counterActions = counterSlice.actions;
+module.exports = counterSlice.reducer;
+module.exports.counterActions = counterSlice.actions;
