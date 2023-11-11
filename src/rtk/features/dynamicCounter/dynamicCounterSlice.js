@@ -1,4 +1,7 @@
 /* eslint-disable no-undef */
+
+const { counterActions } = require("../counter/counterSlice");
+
 /* eslint-disable no-unused-vars */
 const createSlice = require("@reduxjs/toolkit").createSlice;
 
@@ -12,11 +15,22 @@ const dynamicCounterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state, action) => {
-      state.counter += action.payload;
+      state.count += action.payload;
     },
     decrement: (state, action) => {
-      state.counter -= action.payload;
+      state.count -= action.payload;
     },
+  },
+  //   extraReducers: {
+  //     // ["counter/increment"]: (state, action) => {
+  //     //   state.count += 1;
+  //     // },
+
+  //   },
+  extraReducers: (builder) => {
+    builder.addCase(counterActions.increment, (state, action) => {
+      state.count += 1;
+    });
   },
 });
 
