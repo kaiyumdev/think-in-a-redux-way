@@ -83,3 +83,6 @@ const store = createStore(reducer, applyMiddleware(thunkMiddleware.default));
 store.subscribe(() => {
   console.log(store.getState());
 });
+
+//dispatch actions
+store.dispatch(fetchPosts);
