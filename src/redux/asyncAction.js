@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
-import { applyMiddleware, createStore } from "redux";
 /* eslint-disable no-unused-vars */
 //initialState
+import { applyMiddleware, createStore } from "redux";
+const thunkMiddleware = require("redux-thunk");
 const fetch = require("node-fetch");
 const initialState = {
   loading: false,
@@ -76,4 +77,9 @@ const fetchPosts = () => {
 };
 
 //create store
-const store = createStore(reducer, applyMiddleware());
+const store = createStore(reducer, applyMiddleware(thunkMiddleware.default));
+
+//subscribe to state changes
+store.subscribe(() => {
+  console.log(store.getState());
+});
