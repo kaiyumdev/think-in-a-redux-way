@@ -1,4 +1,5 @@
 import { DDECREMENT, DINCREMENT } from "./actionTypes";
+import { INCREMENT } from "../counter/actionTypes";
 
 const initialState = {
   value: 0,
@@ -16,6 +17,12 @@ const dynamicCounterReducer = (state = initialState, action) => {
       return {
         ...state,
         value: state.value - action.payload,
+      };
+
+    case INCREMENT:
+      return {
+        ...state,
+        value: state.value + 1,
       };
 
     default:
