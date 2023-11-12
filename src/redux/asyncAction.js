@@ -1,9 +1,10 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-//initialState
 import { applyMiddleware, createStore } from "redux";
 const thunkMiddleware = require("redux-thunk");
 const fetch = require("node-fetch");
+
+//initialState
 const initialState = {
   loading: false,
   posts: [],
