@@ -14,12 +14,10 @@ store.subscribe(() => {
 
 //dispatch actions
 // store.dispatch(counterActions.increment());
-// store.dispatch(counterActions.increment());
 
 // store.dispatch(counterActions.decrement());
 
 //dispatch actions
-// store.dispatch(dynamicCounterActions.increment(3));
 // store.dispatch(dynamicCounterActions.increment(4));
 
 // store.dispatch(dynamicCounterActions.decrement(2));
