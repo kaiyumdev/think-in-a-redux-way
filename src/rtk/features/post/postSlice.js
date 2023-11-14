@@ -36,3 +36,6 @@ const postSlice = createSlice({
     });
   },
 });
+
+module.exports = postSlice.reducer;
+module.exports.fetchPosts = fetchPosts;
