@@ -19,6 +19,8 @@ store.subscribe(() => {
 
 //dispatch actions
 // store.dispatch(dynamicCounterActions.increment(4));
+// store.dispatch(dynamicCounterActions.increment(4));
 
+// store.dispatch(dynamicCounterActions.decrement(2));
 // store.dispatch(dynamicCounterActions.decrement(2));
 store.dispatch(fetchPosts());
