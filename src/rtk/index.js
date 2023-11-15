@@ -21,9 +21,11 @@ store.subscribe(() => {
 // store.dispatch(dynamicCounterActions.increment(2));
 // store.dispatch(dynamicCounterActions.increment(4));
 // store.dispatch(dynamicCounterActions.increment(4));
+// store.dispatch(dynamicCounterActions.increment(6));
 
 // store.dispatch(dynamicCounterActions.decrement(2));
 // store.dispatch(dynamicCounterActions.decrement(2));
 // store.dispatch(dynamicCounterActions.decrement(2));
+// store.dispatch(dynamicCounterActions.decrement(4));
 
 store.dispatch(fetchPosts());
